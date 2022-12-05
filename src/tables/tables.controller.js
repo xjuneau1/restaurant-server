@@ -53,10 +53,10 @@ function reservationSeated(req, res, next){
 function checkTableOccupied(req, res, next) {
   const currentTable = res.locals.table;
 
-  if (currentTable.reservation_id === null) {
+  if (currentTable.reservation_id != null) {
     return next({
       status: 400,
-      message: `The current table is not occupied.`,
+      message: `This table is occupied.`,
     });
   }
   next();
@@ -207,8 +207,7 @@ module.exports = {
   ],
   finishTable: [
     asyncErrorBoundary(isValidTableId),
-    checkTableOccupied,
-    asyncErrorBoundary(finishTable),
+    asyncErrorBoundary(finishTable)
   ],
   removeTable: [
     asyncErrorBoundary(isValidTableId),
