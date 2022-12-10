@@ -5,13 +5,15 @@ const bodyDataHas = require("../validations/bodyDataHas");
 async function list(req, res) {
   const { date } = req.query;
   const { mobile_number } = req.query;
-
+  const { name } = req.query;
   if (date) {
     const reservationByDate = await service.listByDate(date);
     res.status(200).json({ data: reservationByDate });
   } else if(mobile_number){
     const reservationByPhone = await service.listByPhone(mobile_number)
     res.status(200).json({data: reservationByPhone})
+  } else if (name){
+    res.status(200).json({data: await service.listByName(name)})
   } else {
     res.status(200).json({ data: await service.list() });
   }
