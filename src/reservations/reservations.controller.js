@@ -7,15 +7,13 @@ async function list(req, res) {
   const { mobile_number } = req.query;
   const { name } = req.query;
   if (date) {
-    const reservationByDate = await service.listByDate(date);
-    res.status(200).json({ data: reservationByDate });
-  } else if(mobile_number){
-    const reservationByPhone = await service.listByPhone(mobile_number)
-    res.status(200).json({data: reservationByPhone})
+    res.status(200).json({data: await service.listByDate(date)});
+  } else if (mobile_number){
+    res.status(200).json({data: await service.listByPhone(mobile_number)})
   } else if (name){
     res.status(200).json({data: await service.listByName(name)})
   } else {
-    res.status(200).json({ data: await service.list() });
+    res.status(200).json({data: await service.list()});
   }
   
 }
