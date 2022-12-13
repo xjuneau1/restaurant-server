@@ -23,6 +23,8 @@ function read(req, res) {
 }
 
 async function create(req, res, next) {
+  const {first_name, last_name, mobile_number, ...requestBody} = req.body.data
+  console.log(requestBody)
   const reservation = await service.create(req.body.data);
   res.status(201).json({ data: reservation[0] });
 }

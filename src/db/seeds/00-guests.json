@@ -1,0 +1,35 @@
+[
+    {
+      "first_name": "Terri",
+      "last_name": "Rickshaw",
+      "email": "ratahagfa@email.com",
+      "birthday": "1989-12-04",
+      "company": "Reshard Inc.",
+      "notes": "seafood allergy",
+      "confirmed": "",
+      "section": "",
+      "waiter": ""
+    },
+    {
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "oparamtuh@email.com",
+      "birthday": "1996-03-21",
+      "company": "Upsala Energy",
+      "notes": "prefers a table by a window",
+      "confirmed": "",
+      "section": "",
+      "waiter": ""
+    },
+    {
+      "first_name": "Bird",
+      "last_name": "Person",
+      "email": "yreahlsi@email.com",
+      "birthday": "1967-07-23",
+      "company": "Air and Oil LLC.",
+      "notes": "wife prefers white wine",
+      "confirmed": "",
+      "section": "",
+      "waiter": ""
+    }
+  ]
