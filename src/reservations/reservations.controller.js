@@ -86,7 +86,8 @@ const VALID_PROPERTIES = [
   "people",
   "status",
   "created_at",
-  "updated_at"
+  "updated_at",
+  "guest_id"
 ];
 
 function hasValidProperties(req, res, next) {
@@ -227,7 +228,7 @@ module.exports = {
     asyncErrorBoundary(create),
   ],
   updateStatus: [
-    asyncErrorBoundary(isValidId),
+    asyncErrorBoundary(isValidId), 
     statusNotUnknown,
     statusNotFinished,
     asyncErrorBoundary(updateStatus),

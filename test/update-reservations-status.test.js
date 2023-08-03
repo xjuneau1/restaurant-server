@@ -3,7 +3,7 @@ const request = require("supertest");
 const app = require("../src/app");
 const knex = require("../src/db/connection");
 
-describe("US-06 - Reservation status", () => {
+describe("Reservation status", () => {
   beforeAll(() => {
     return knex.migrate
       .forceFreeMigrationsLock()
@@ -84,6 +84,24 @@ describe("US-06 - Reservation status", () => {
         "reservation_time",
       ]);
     });
+    
+    test("returns 200 for status cancelled", async () => {
+        const reservation = await knex("reservations")
+          .orderBy(["reservation_date", "reservation_time"])
+          .first();
+  
+        expect(reservation).not.toBeUndefined();
+  
+        const status = "cancelled";
+  
+        const response = await request(app)
+          .put(`/reservations/${reservation.reservation_id}/status`)
+          .set("Accept", "application/json")
+          .send({ data: { status } });
+  
+        expect(response.body.data).toHaveProperty("status", status);
+        expect(response.status).toBe(200);
+      });
 
     test("returns 404 for non-existent reservation_id", async () => {
       const response = await request(app)
@@ -286,6 +304,8 @@ describe("US-06 - Reservation status", () => {
     });
   });
 });
+
+
 
 function asDateString(date) {
   return `${date.getFullYear().toString(10)}-${(date.getMonth() + 1)
