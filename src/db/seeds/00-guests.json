@@ -1,7 +1,7 @@
 [
     {
-      "first_name": "Terri",
-      "last_name": "Rickshaw",
+      "first_name": "Rick",
+      "last_name": "Sanchez",
       "email": "ratahagfa@email.com",
       "birthday": "1989-12-04",
       "company": "Reshard Inc.",
@@ -11,8 +11,8 @@
       "waiter": ""
     },
     {
-      "first_name": "John",
-      "last_name": "Smith",
+      "first_name": "Frank",
+      "last_name": "Palicky",
       "email": "oparamtuh@email.com",
       "birthday": "1996-03-21",
       "company": "Upsala Energy",
@@ -24,6 +24,28 @@
     {
       "first_name": "Bird",
       "last_name": "Person",
+      "email": "yreahlsi@email.com",
+      "birthday": "1967-07-23",
+      "company": "Air and Oil LLC.",
+      "notes": "wife prefers white wine",
+      "confirmed": "",
+      "section": "",
+      "waiter": ""
+    },
+    {
+      "first_name": "Tiger",
+      "last_name": "Lion",
+      "email": "yreahlsi@email.com",
+      "birthday": "1967-07-23",
+      "company": "Air and Oil LLC.",
+      "notes": "wife prefers white wine",
+      "confirmed": "",
+      "section": "",
+      "waiter": ""
+    },
+    {
+      "first_name": "Anthony",
+      "last_name": "Charboneau",
       "email": "yreahlsi@email.com",
       "birthday": "1967-07-23",
       "company": "Air and Oil LLC.",

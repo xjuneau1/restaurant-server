@@ -35,14 +35,23 @@ async function guestIdExists(req, res, next) {
 
 async function guestExists(req, res, next) {
   const currentGuestList = await list();
-  currentGuestList.find(
-    (guest) =>
+  
+  const guestFound = currentGuestList.find((guest) =>
       guest.first_name === req.body.data.first_name &&
       guest.last_name === req.body.data.last_name
-  )
-    ? next({ status: 304, message: "Guest already exists" })
-    : next();
+  );
+
+  if (guestFound) {
+    next({ 
+      status: 200, 
+      message: `Guest already exists`,
+    }); 
+  } else {
+    return next();
+  }
 }
+
+
 module.exports = {
   list: [asyncErrorBoundary(list)],
   read: [asyncErrorBoundary(guestIdExists), asyncErrorBoundary(read)],

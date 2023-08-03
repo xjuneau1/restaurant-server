@@ -15,6 +15,7 @@ const guestsRouter = require("./guests/guests.router")
 
 app.use(cors());
 app.use(express.json());
+// app.use(express.bodyParser())
 
 app.use("/reservations", reservationsRouter);
 app.use("/tables", tablesRouter);
